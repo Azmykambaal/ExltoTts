@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application") version "8.1.0"
     id("org.jetbrains.kotlin.android") version "1.9.0"
-    id("kotlin-parcelize")
+    id("org.jetbrains.kotlin.plugin.parcelize") version "1.9.0"
 }
 
 repositories {
@@ -12,7 +12,7 @@ repositories {
 android {
     compileSdk = 34
     namespace = "com.ankitts.exltotts"
-    
+
     defaultConfig {
         applicationId = "com.ankitts.exltotts"
         minSdk = 26
@@ -20,7 +20,7 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    
+
     buildFeatures {
         viewBinding = true
     }
