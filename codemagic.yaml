@@ -5,14 +5,9 @@ workflows:
     environment:
       vars:
         ANDROID_HOME: /opt/android/sdk
-        KEYSTORE_PASSWORD: rootazezo   # ضع كلمة مرور Keystore هنا أو استخدم Secrets
-        KEY_ALIAS: exlto_tts_key                     # اسم المفتاح
-        KEY_PASSWORD: rootazezo             # كلمة مرور المفتاح
-      android:
-        compile_sdk: 33
-        build_tools: "33.0.2"
-        min_sdk: 21
-        target_sdk: 33
+        KEYSTORE_PASSWORD: rootazezo
+        KEY_ALIAS: exlto_tts_key
+        KEY_PASSWORD: rootazezo
     scripts:
       - name: Clean Project
         script: ./gradlew clean
