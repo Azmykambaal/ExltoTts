@@ -3,17 +3,18 @@ workflows:
     name: Android Release Build
     max_build_duration: 60
     environment:
+      android:
+        compile-sdk: 33
+        build-tools: 33.0.2
+        min-sdk: 21
+        target-sdk: 33
       vars:
-        ANDROID_HOME: /opt/android/sdk
         KEYSTORE_PASSWORD: rootazezo
         KEY_ALIAS: exlto_tts_key
         KEY_PASSWORD: rootazezo
     scripts:
       - name: Grant Gradlew Permission
         script: chmod +x gradlew
-      - name: Setup Android SDK
-        script: |
-          yes | sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
       - name: Ensure Gradle Plugin Repositories
         script: |
           echo "pluginManagement { repositories { google(); gradlePluginPortal(); mavenCentral() } }" >> settings.gradle.kts
