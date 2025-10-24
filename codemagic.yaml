@@ -9,6 +9,14 @@ workflows:
         KEY_ALIAS: exlto_tts_key
         KEY_PASSWORD: rootazezo
     scripts:
+      - name: Grant Gradlew Permission
+        script: chmod +x gradlew
+      - name: Setup Android SDK
+        script: |
+          yes | sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+      - name: Ensure Gradle Plugin Repositories
+        script: |
+          echo "pluginManagement { repositories { google(); gradlePluginPortal(); mavenCentral() } }" >> settings.gradle.kts
       - name: Clean Project
         script: ./gradlew clean
       - name: Build Release APK
