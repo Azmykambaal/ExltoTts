@@ -1,0 +1,27 @@
+workflows:
+  android-release:
+    name: Android Release Build
+    max_build_duration: 60
+    environment:
+      vars:
+        ANDROID_HOME: /opt/android/sdk
+        KEYSTORE_PASSWORD: rootazezo   # ضع كلمة مرور Keystore هنا أو استخدم Secrets
+        KEY_ALIAS: exlto_tts_key                     # اسم المفتاح
+        KEY_PASSWORD: rootazezo             # كلمة مرور المفتاح
+      android:
+        compile_sdk: 33
+        build_tools: "33.0.2"
+        min_sdk: 21
+        target_sdk: 33
+    scripts:
+      - name: Clean Project
+        script: ./gradlew clean
+      - name: Build Release APK
+        script: |
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=release-key.jks \
+            -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD \
+            -Pandroid.injected.signing.key.alias=$KEY_ALIAS \
+            -Pandroid.injected.signing.key.password=$KEY_PASSWORD
+    artifacts:
+      - app/build/outputs/**/*.apk
