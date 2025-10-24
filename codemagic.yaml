@@ -3,11 +3,6 @@ workflows:
     name: Android Release Build
     max_build_duration: 60
     environment:
-      android:
-        compile-sdk: 33
-        build-tools: 33.0.2
-        min-sdk: 21
-        target-sdk: 33
       vars:
         KEYSTORE_PASSWORD: rootazezo
         KEY_ALIAS: exlto_tts_key
