@@ -3,6 +3,8 @@ workflows:
     name: Android Release Build
     max_build_duration: 60
     environment:
+      groups:
+        - default
       vars:
         KEYSTORE_PASSWORD: rootazezo
         KEY_ALIAS: exlto_tts_key
@@ -10,11 +12,14 @@ workflows:
     scripts:
       - name: Grant Gradlew Permission
         script: chmod +x gradlew
+
       - name: Ensure Gradle Plugin Repositories
         script: |
           echo "pluginManagement { repositories { google(); gradlePluginPortal(); mavenCentral() } }" >> settings.gradle.kts
+
       - name: Clean Project
         script: ./gradlew clean
+
       - name: Build Release APK
         script: |
           ./gradlew assembleRelease \
@@ -22,5 +27,6 @@ workflows:
             -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD \
             -Pandroid.injected.signing.key.alias=$KEY_ALIAS \
             -Pandroid.injected.signing.key.password=$KEY_PASSWORD
+
     artifacts:
       - app/build/outputs/**/*.apk
