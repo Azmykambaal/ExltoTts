@@ -13,7 +13,7 @@
     <string name="no_directory_selected">No directory selected</string>
     <string name="error_no_file">Please select an Excel file</string>
     <string name="error_no_directory">Please select an output directory</string>
-    <string name="error_invalid_row_range">Invalid row range. Start must be >= 1 and <= End</string>
+    <string name="error_invalid_row_range">Invalid row range. Start must be &gt;= 1 and &lt;= End</string>
     <string name="error_empty_row_fields">Please enter both start and end row numbers</string>
     <string name="error_file_not_found">File not found</string>
     <string name="error_parsing_failed">Failed to parse Excel file</string>
@@ -33,20 +33,20 @@
     <string name="column_past_participle">Past Participle</string>
     <string name="error_no_data">No data to preview</string>
     <string name="tts_activity_title">Converting to Audio</string>
-    <string name="tts_progress_message">Converting %1$d of %2$d files...</string>
+    <string name="tts_progress_message" formatted="false">Converting %1$d of %2$d files...</string>
     <string name="tts_initializing">Initializing Text-to-Speech...</string>
     <string name="tts_conversion_complete">Conversion completed successfully!</string>
     <string name="tts_conversion_failed">Conversion failed</string>
     <string name="error_tts_init_failed">Failed to initialize Text-to-Speech. Please check if TTS engine is installed.</string>
     <string name="error_tts_no_voices">No suitable voices found for American English</string>
-    <string name="error_tts_file_write_failed">Failed to write audio file: %1$s</string>
-    <string name="error_tts_conversion_error">Error converting text: %1$s</string>
-    <string name="tts_file_progress">Processing: %1$s</string>
+    <string name="error_tts_file_write_failed" formatted="false">Failed to write audio file: %1$s</string>
+    <string name="error_tts_conversion_error" formatted="false">Error converting text: %1$s</string>
+    <string name="tts_file_progress" formatted="false">Processing: %1$s</string>
     <string name="tts_cancel_button">Cancel</string>
-    <string name="tts_files_completed">Files completed: %1$d / %2$d</string>
-    <string name="tts_current_file">Current file: %1$s</string>
+    <string name="tts_files_completed" formatted="false">Files completed: %1$d / %2$d</string>
+    <string name="tts_current_file" formatted="false">Current file: %1$s</string>
     <string name="operation_successful">Operation successful! All audio files have been created.</string>
-    <string name="operation_successful_with_errors">Operation completed with %1$d successful and %2$d failed conversions.</string>
+    <string name="operation_successful_with_errors" formatted="false">Operation completed with %1$d successful and %2$d failed conversions.</string>
     <string name="conversion_cancelled">Conversion was cancelled or failed</string>
     <string name="conversion_cancelled_message">Conversion was cancelled or failed. You can retry with the same selections.</string>
     <string name="error_permission_denied">Permission denied. Please try selecting the file/directory again.</string>

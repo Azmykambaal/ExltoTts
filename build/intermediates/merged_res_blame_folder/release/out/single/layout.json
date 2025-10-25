@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/item_irregular_verb.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/item_irregular_verb.xml"
+    },
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/activity_tts.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/activity_tts.xml"
+    },
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/item_irregular_plural.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/item_irregular_plural.xml"
+    },
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/item_section_header.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/item_section_header.xml"
+    },
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/activity_main.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/activity_preview.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/activity_preview.xml"
+    },
+    {
+        "merged": "com.ankitts.exltotts-mergeReleaseResources-34:/layout/item_regular_word.xml",
+        "source": "com.ankitts.exltotts-main-36:/layout/item_regular_word.xml"
+    }
+]
