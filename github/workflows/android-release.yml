@@ -1,0 +1,41 @@
+name: Android Release Build
+
+# تشغيل الـ workflow عند كل push على الفرع main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # نسخ المشروع من GitHub
+      - uses: actions/checkout@v3
+
+      # إعداد صلاحيات gradlew
+      - name: Grant Gradlew Permission
+        run: chmod +x gradlew
+
+      # التأكد من وجود مستودعات Gradle Plugin
+      - name: Ensure Gradle Plugin Repositories
+        run: |
+          echo "pluginManagement { repositories { google(); gradlePluginPortal(); mavenCentral() } }" >> settings.gradle.kts
+
+      # تنظيف المشروع قبل البناء
+      - name: Clean Project
+        run: ./gradlew clean
+
+      # بناء APK بنسخة Release مع استخدام الـ Secrets
+      - name: Build Release APK
+        run: |
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=release-key.jks \
+            -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
+
+    # رفع الـ APK كـ artifact للتحميل
+    artifacts:
+      - app/build/outputs/**/*.apk
