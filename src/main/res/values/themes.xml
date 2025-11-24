@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Material3.Light" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ExltoTts" parent="Theme.Material3.DayNight.NoActionBar">
 
+        <!-- الألوان الأساسية -->
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryContainer">@color/primary_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
 
         <item name="colorSecondary">@color/accent</item>
-        <item name="colorSecondaryContainer">@color/accent</item>
         <item name="colorOnSecondary">@android:color/black</item>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
-
-        <item name="colorError">@color/error</item>
-        <item name="colorOnError">@android:color/white</item>
-
+        <!-- الخلفية -->
         <item name="colorBackground">@color/background</item>
         <item name="colorOnBackground">@color/text_primary</item>
 
+        <!-- السطح -->
         <item name="colorSurface">@color/background</item>
         <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- الأخطاء -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@android:color/white</item>
 
     </style>
 
